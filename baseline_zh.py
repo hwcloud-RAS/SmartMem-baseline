@@ -53,11 +53,11 @@ class Config(object):
     WORKER_NUM: int = field(default=16, init=False)
 
     # 数据路径配置, 分别是原始数据集路径、生成的特征路径、处理后训练集特征路径、处理后测试集特征路径、维修单路径
-    data_path: str = "D:/competition_data/type_A"
-    feature_path: str = "D:/release_features/combined_sn_feature"
-    train_data_path: str = "D:/release_features/train_data/type_A"
-    test_data_path: str = "D:/release_features/test_data/type_A"
-    ticket_path: str = "D:/competition_data/ticket.csv"
+    data_path: str = "To be filled"
+    feature_path: str = "To be filled"
+    train_data_path: str = "To be filled"
+    test_data_path: str = "To be filled"
+    ticket_path: str = "To be filled"
 
     # 日期范围配置
     train_date_range: tuple = ("2024-01-01", "2024-06-01")
@@ -933,7 +933,7 @@ if __name__ == "__main__":
 
     # 初始化配置类 Config，设置数据路径、特征路径、训练数据路径、测试数据路径等
     config = Config(
-        data_path=os.path.join("D:/competition_data", f"type_{sn_type}"),  # 原始数据集路径
+        data_path=os.path.join("D:/competition_data/stage1_feather", f"type_{sn_type}"),  # 原始数据集路径
         feature_path=os.path.join(
             "D:/release_features/combined_sn_feature", f"type_{sn_type}"  # 生成的特征数据路径
         ),
@@ -944,6 +944,7 @@ if __name__ == "__main__":
             "D:/release_features/test_data", f"type_{sn_type}_{test_stage}"  # 生成的测试数据路径
         ),
         test_data_range=test_data_range,  # 测试数据时间范围
+        ticket_path="D:/competition_data/ticket.csv",  # 维修单路径
     )
 
     # 初始化特征工厂类 FeatureFactory，用于处理 SN 文件并生成特征
