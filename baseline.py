@@ -63,7 +63,7 @@ class Config(object):
     train_date_range: tuple = ("2024-01-01", "2024-06-01")
     test_data_range: tuple = ("2024-06-01", "2024-08-01")
 
-    # Time interval for feature extraction (in seconds)
+    # The time interval (in seconds) for feature extraction. For better performance, it can be modified to 15 * ONE_MINUTE or 30 * ONE_MINUTE.
     feature_interval: int = ONE_HOUR
 
 
